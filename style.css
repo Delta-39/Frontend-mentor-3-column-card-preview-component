@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+/* 
+font-family: 'Big Shoulders Display', cursive;
+font-family: 'Lexend Deca', sans-serif
+ */
+
+/* Code Reset */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Grid Container */
+.container{
+    min-height: 100vh;
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3,1fr);
+    padding: 40px 15px;
+    background-color: hsl(0, 0%, 95%);
+}
+
+/* Cards General Styling */
+.card{
+    width: 100%;
+    height: 100%;
+    padding: 40px 50px;
+}
+
+.card h2{
+    font-family: 'Big Shoulders Display', cursive;
+    text-transform: uppercase;
+    padding: 20px 0;
+    color: white;
+    font-size: 2rem;
+}
+
+.card p{
+    font-family: 'Lexend Deca', sans-serif;
+    padding-bottom: 20px;
+    color: hsla(0, 0%, 100%, 0.75);
+}
+
+.btn{
+    font-family: 'Lexend Deca', sans-serif;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    background-color: white;
+    box-shadow: 1px 4px 14px 1px rgba(0,0,0,0.39);
+    position: relative;
+    cursor: pointer;
+    transition: .3s;
+}
+
+/* Adding BG Colours to the cards */
+.orange{
+    background-color: hsl(31, 77%, 52%);
+}
+
+.blue{
+    background-color: hsl(184, 100%, 22%);
+}
+.green{
+    background-color: hsl(179, 100%, 13%);
+}
+
+/* Adding radius to the first and last card */
+.first{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.last{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Adding colors to the text buttons */
+.org{
+    color:hsl(31, 77%, 52%) ;
+}
+
+.ble{
+    color:hsl(184, 100%, 22%) ;
+}
+
+.gre{
+    color: hsl(179, 100%, 13%);
+}
+
+/* Adding hover states to the buttons */
+
+.btn::before, .btn::after{
+    content: "";
+    position: absolute;
+    background: inherit;
+    border-radius: inherit;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover{
+    transform: translate(-12px,-12px);
+}
+
+.btn:hover::after{
+    transform: translate(6px,6px);
+}
+
+.btn:hover::after{
+    transform: translate(12px,12px);
+}
+
+
+
+/* Styling for desktop */
+
+@media screen and (min-width: 1024px) {
+    .container{
+        padding: none;
+        display: grid;
+        grid-template-columns: repeat(3,0.2fr);
+        grid-template-rows: 0.6fr;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .first{
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+    }
+
+    .last{
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+    }
+
+    .card_btn{
+        padding-top: 70px;
+        
+    }
+
+}
